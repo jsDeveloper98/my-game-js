@@ -1,0 +1,57 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  height: 13vh;
+  width: 300px;
+  background-color: green;
+  display: flex;
+  flex-direction: column;
+}
+
+.users {
+  height: 50%;
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+}
+
+#game_zone {
+  height: 100vh;
+  width: 100%;
+  background-color: rgb(0, 185, 0);
+  position: relative;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  transition: width 0.1s ease, height 0.1s ease;
+}
+
+.gift {
+  position: fixed;
+  height: 40px;
+  width: 40px;
+  background-image: url(images/gift.png);
+  background-size: contain;
+  animation: jump 0.3s linear alternate infinite;
+}
+
+.star {
+  position: fixed;
+  height: 40px;
+  width: 40px;
+  background-image: url(images/star.png);
+  background-size: contain;
+  animation: lightning 0.8s linear alternate infinite;
+}
