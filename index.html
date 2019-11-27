@@ -5,15 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
-    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <div id="game_zone">
-      <div class="container">
-        <div class="users"><span>Player1</span>:<span id="score1">0</span></div>
-        <div class="users"><span>Player2</span>:<span id="score2">0</span></div>
+      <div id="container" class="container">
+        <div class="users">
+          <span id="user1">Player1</span>:<span id="score1">0</span>
+        </div>
+        <div class="users">
+          <span id="user2">Player2</span>:<span id="score2">0</span>
+        </div>
+      </div>
+      <div id="form">
+        <form action="#">
+          <p>Welcome to the Best Game in the World</p>
+          <img
+            src="gifs/giphy.gif"
+            style="border-radius: 20px;"
+            width="250xp;"
+            alt=""
+          />
+          <div id="inputs">
+            <label>Player1</label>
+            <input id="playerName1" type="text" />
+            <label>Player2</label>
+            <input id="playerName2" type="text" />
+          </div>
+          <button id="btn">Click to Start</button>
+        </form>
       </div>
     </div>
+
+    <p id="gameOver">Game Over</p>
+    <img id="firework" style="display: none;" src="gifs/giphy (1).gif" alt="" />
+    <script src="js/helpers.js"></script>
+    <script src="js/gift.js"></script>
+    <script src="js/star.js"></script>
+    <script src="js/circle.js"></script>
+    <script src="js/game.js"></script>
   </body>
 </html>
