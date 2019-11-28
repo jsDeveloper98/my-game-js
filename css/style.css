@@ -38,7 +38,7 @@ body {
 #game_zone {
   height: 100vh;
   width: 100%;
-  background-color: rgb(40, 46, 40);
+  background-color: rgb(49, 61, 49);
   position: relative;
   transition: all ease 1s;
 }
@@ -54,20 +54,22 @@ body {
 
 .gift {
   position: fixed;
-  height: 40px;
-  width: 40px;
-  background-image: url(../images/gift.png);
+  height: 60px;
+  width: 60px;
+  background-image: url(../images/trousers.png);
   background-size: contain;
   animation: jump 0.3s linear alternate infinite;
+  background-repeat: no-repeat;
 }
 
 .star {
   position: fixed;
-  height: 40px;
-  width: 40px;
-  background-image: url(../images/star.png);
+  height: 60px;
+  width: 60px;
+  background-image: url(../images/light.png);
   background-size: contain;
   animation: lightning 0.8s linear alternate infinite;
+  background-repeat: no-repeat;
 }
 
 #form {
@@ -139,4 +141,41 @@ button {
   font-weight: 700;
   font-style: italic;
   display: none;
+}
+
+#winner_name {
+  font-size: 100px;
+  color: darkred;
+  text-shadow: 0 0 3px #ff0000, 0 0 5px #0000ff;
+  font-weight: 700;
+  font-style: italic;
+  display: none;
+}
+
+@keyframes lightning {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.3;
+  }
+  68%,
+  72% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(10%);
+  }
+  50% {
+    transform: translateY(15%);
+  }
+  100% {
+    transform: translateY(20%);
+  }
 }

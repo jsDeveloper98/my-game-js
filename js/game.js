@@ -25,13 +25,22 @@ class Game {
     this.starLifeTime = 5000;
     this.giftLifeTime = 50000;
     this.ball1 = new Circle("url(gifs/voter.gif)", 50, 50, this);
-    this.ball2 = new Circle("url(gifs/mard.gif)", 50, 50, this);
+    this.ball2 = new Circle("url(gifs/voter2.gif)", 50, 50, this);
     this.balls = [this.ball1, this.ball2];
     this.gameZoneEl.appendChild(this.ball1.element);
     this.gameZoneEl.appendChild(this.ball2.element);
   }
 
   start() {
+    let sound = new Howl({
+      src: "./sounds/theme.mp3",
+      format: ["mp3", "aac"]
+    });
+    sound.play();
+    setInterval(() => {
+      sound.play();
+    }, 96000);
+
     this.initKeyEvents();
     this.initGiftLifeCycle();
     this.startStarLife();

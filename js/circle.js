@@ -183,6 +183,11 @@ class Circle {
     });
   }
   afterEatGift() {
+    let sound = new Howl({
+      src: "./sounds/eating.mp3",
+      format: ["mp3", "aac"]
+    });
+    sound.play();
     this.width += 15;
     this.height += 15;
     if (this.step > 0.3) {
@@ -194,10 +199,17 @@ class Circle {
     this.updateScore();
   }
   afterEatStar() {
+    let sound = new Howl({
+      src: "./sounds/star.mp3",
+      format: ["mp3", "aac"]
+    });
+    sound.play();
     this.step = +(this.step + 0.5).toFixed(1);
     setTimeout(() => {
-      this.step = +(this.step - 0.5).toFixed(1);
-    }, 5000);
+      if (this.score !== 0) {
+        this.step = +(this.step - 0.5).toFixed(1);
+      }
+    }, 6000);
   }
 
   gameOver() {
@@ -205,8 +217,6 @@ class Circle {
     this.gameZoneEl.style.height = "0";
     this.gameZoneEl.style.overflow = "hidden";
     this.stop();
-    document.getElementById("gameOver").style.display = "block";
-    document.ge;
   }
 
   updateScore() {
@@ -216,7 +226,21 @@ class Circle {
     if (this.score >= 10) {
       this.gameOver();
       document.body.style.backgroundColor = "black";
+      document.getElementById("gameOver").style.display = "block";
       document.getElementById("firework").style.display = "block";
+      document.getElementById("winner_name").style.display = "block";
+      let sound = new Howl({
+        src: "./sounds/fireworks.mp3",
+        format: ["mp3", "aac"]
+      });
+      sound.play();
+      if (this.game.ball1.score > this.game.ball2.score) {
+        document.getElementById("winner_name").innerHTML =
+          playerNameInput1.value;
+      } else {
+        document.getElementById("winner_name").innerHTML =
+          playerNameInput2.value;
+      }
     }
   }
 }
